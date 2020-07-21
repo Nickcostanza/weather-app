@@ -18,7 +18,6 @@ header {
 }
 
 #weatherCard{
-    display:hide;
     display:flex;
     justify-content: flex-end;
 }
