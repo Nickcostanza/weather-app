@@ -24,22 +24,23 @@ var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&u
     }).then(function(response){
 
     
-        var icon = response.weather.icon;
+        var icon = response.weather.icon +'.png';
 
         console.log(icon);
-
+    
 
     
         $('#wicon').attr('src', icon);   
         $('.cityName').html('<h2>' + response.name + "</h1>" );
         $('.temp').text(response.main.temp +'°F');
-        $('.humidity').text('Humidity: ' + response.main.humidity);
+        $('.humidity').text('Humidity: ' + response.main.humidity + '%');
         $('.wind').text('Wind Speed: ' + response.wind.speed + ' MPH');
         $('uvIndex').text('UV Index: ');
         
     });
 
-    
 
 });
+
+
  

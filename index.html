@@ -12,42 +12,36 @@
 </head>
 <body>
     <header><h1>Weather Dashboard</h1></header>
-    <div class="container">
-     <div id="searchContainer">
-                <strong>Search City:</strong>
+<div class="container">
+  <div id="searchContainer">
+         <strong>Search City:</strong>
         <div class="row">
-            <div class="col">
-             <div class="input-group mb-3">
-                <input type="text" id="city" class="form-control" aria-label="city" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                <button type="button" class="btn btn-primary" id="searchBtn"><i class="fa fa-search"></i></button>
-                </div>
-             </div>
-            </div>    
+                 <div class="col-3">
+                     <form class="input-group mb-3">
+                         <input type="text" id="city" class="form-control" aria-label="city" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-primary" id="searchBtn"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                </div>   
+            <div id="weatherCard" class="col-9">
+                <div class="card">
+                    <div class="cityName"></div>
+                <br>
+                    <div id="icon"><img id="wicon" src="" alt=""></div>
+                    <div class="temp"></div>  
+                <br>
+                    <div class="humidity"></div>
+                <br>
+                    <div class="wind"></div>
+                <br>
+                <div class="uvIndex"></div>
+            </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <ul class="list-group cityList list-group-flush">
-              
-            </ul>
-        </div>  
-     </div>
     
-         <div id="weatherCard">
-            <div class="card">
-                <div class="cityName"></div>
-            <br>
-                <div id="icon"><img id="wicon" src=""></div>
-                <div class="temp"></div>
-                
-            <br>
-                <div class="humidity"></div>
-            <br>
-                <div class="wind"></div>
-            <br>
-            <div class="uvIndex"></div>
-             </div>
-         </div>
+        
     </div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script rel="javascript" src="script.js"></script>
