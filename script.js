@@ -1,14 +1,9 @@
-//create vars for api and url
-//onclick event taking info and creating an ajax call
-//then generate that info on page
-//add city from input box to div storing it locally after search
-//figure out a 5 day forecast card plan??
 
 
 
 
 
-
+//OnClick event to get users deseired city
 
 $('#searchBtn').on('click', function() {
 
@@ -17,27 +12,31 @@ var apiKey = 'fe4de04b2dc40cad6dc883405a9a210c';
 var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=' + apiKey;
 
 
-
+//Querying Api with users response
     $.ajax({
         url: queryURL,
         method: 'GET'
     }).then(function(response){
 
     
-        var icon = response.weather.icon +'.png';
+        var icon = response.weather[0].icon;
+        var iconURL = 'http://openweathermap.org/img/w/'
 
-        console.log(icon);
-    
-
-    
-        $('#wicon').attr('src', icon);   
+    //generating text to the page
+        $('#wicon').attr('src', 'http://openweathermap.org/img/w/' + icon + '.png');   
         $('.cityName').html('<h2>' + response.name + "</h1>" );
         $('.temp').text(response.main.temp +'°F');
         $('.humidity').text('Humidity: ' + response.main.humidity + '%');
         $('.wind').text('Wind Speed: ' + response.wind.speed + ' MPH');
-        $('uvIndex').text('UV Index: ');
+        $('.uvIndex').text('UV Index: ');
         
-    });
+    })
+
+    //locally Store City and add to an <ul> on page
+    localStorage.setItem('city', city);
+    localStorage.getItem(city);
+
+    console.log(localStorage);
 
 
 });
