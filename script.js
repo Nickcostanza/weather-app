@@ -1,8 +1,4 @@
 
-
-
-
-
 //OnClick event to get users deseired city
 
 $('#searchBtn').on('click', function() {
@@ -10,7 +6,7 @@ $('#searchBtn').on('click', function() {
 var city = $('#city').val().trim();    
 var apiKey = 'fe4de04b2dc40cad6dc883405a9a210c';
 var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=' + apiKey;
-
+var queryURL5 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=' + apiKey;
 
 //Querying Api with users response
     $.ajax({
@@ -36,10 +32,23 @@ var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&u
     localStorage.setItem('city', city);
     localStorage.getItem(city);
 
-    console.log(localStorage);
 
+      // api call to retreive 5 day forecast  
+    $.ajax ({
+        url: queryURL5,
+        method: 'GET'
+    }).then(function(response){
+
+        console.log(queryURL5);
+
+    })
+
+    //Need to creat a for loop to get 5 day forecast?
+    //also to append the 5 cards to the page to show info to user using a card group w/ Bootstrap
 
 });
+
+
 
 
  
