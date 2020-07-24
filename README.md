@@ -18,8 +18,9 @@ For this course I've slightly fallen behind regarding JS/Jquery.
 
 ## Links to Repo/Deployed App
 
-[Github Repository]()
-[Deployed Applicatoin]()
+[Github Repository](https://github.com/Nickcostanza/weather-app)
+<br>
+[Deployed App](https://nickcostanza.github.io/weather-app/.)
 
 
 
